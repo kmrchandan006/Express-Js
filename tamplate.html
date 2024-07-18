@@ -1,0 +1,27 @@
+ <!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= heading %></h1>
+
+    <% if (user) { %>
+        <p>Welcome, <%= user.name %>!</p>
+    <% } else { %>
+        <p>Welcome, Guest!</p>
+    <% } %>
+
+    <h2>Messages</h2>
+    <ul>
+        <% if (messages.length > 0) { %>
+            <% messages.forEach(function(message) { %>
+                <li><%= message %></li>
+            <% }); %>
+        <% } else { %>
+            <li>No messages available.</li>
+        <% } %>
+    </ul>
+</body>
+</html>
